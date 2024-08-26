@@ -152,6 +152,9 @@ case $choice in
 
         blue_echo "Installing gcc..."
         sudo apt-get install gcc -y -qq
+
+        blue_echo "Installing jq..."
+        sudo apt-get install jq -y -qq
         
         blue_echo "Installing hostapd-wpe..."
         sudo apt-get install hostapd-wpe -y -qq
@@ -209,6 +212,9 @@ case $choice in
         sudo apt-get install xrdp -y -qq"
         sudo systemctl enable xrdp
         sudo systemctl start xrdp
+
+        blue_echo "Installing misc PIP3 tools..."
+        pip3 install pandas openpyxl requests beautifulsoup4 stem tor shell-gpt xlsxwriter lolcat 
 
         blue_echo "Installing Bloodhound-ce..."
         cd /opt/;
@@ -276,7 +282,7 @@ case $choice in
 
         # ----- Pip Install Respositories -----
         blue_echo "Pip installing pycryptodome/cython/ssh-audit..."
-        pip install pycryptodome;
+        pip3 install pycryptodome;
         pip3 install ssh-audit;
         pip3 install cython;
         
