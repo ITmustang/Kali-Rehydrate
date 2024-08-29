@@ -28,7 +28,6 @@ purple_echo() {
     echo -e "\033[35m$1\033[0m"
 }
 
-
 # ------ Root Checker ------
 if [ "$EUID" -ne 0 ]; then
     red_echo "Error: " 
@@ -209,19 +208,31 @@ case $choice in
         sudo apt-get install airgeddon -y -qq
 
         blue_echo "Installing XRDP..."
-        sudo apt-get install xrdp -y -qq"
+        sudo apt-get install xrdp -y -qq
         sudo systemctl enable xrdp
         sudo systemctl start xrdp
+
+        blue_echo "Installing and starting SSH..."
+        sudo apt-get install ssh openssh-server -y -qq
+        sudo systemctl enable ssh
+        sudo systemctl start ssh
 
         blue_echo "Installing misc PIP3 tools..."
         pip3 install pandas openpyxl requests beautifulsoup4 stem tor shell-gpt xlsxwriter lolcat 
 
+        #  ---- leafpad -----
+        blue_echo "Installing leafpad..."
+        sudo apt-get install leafpad 
+        
+        blue_echo "Installing npm..."
+        sudo apt-get install npm -y -qq
+        
         blue_echo "Installing Bloodhound-ce..."
         cd /opt/;
         sudo mkdir bloodhound-ce;
         cd /opt/bloodhound-ce;
-        sudo curl -L bloodhound-ce/ghst.ly/getbhce >> docker-compose.yml;
-
+        curl -L https://ghst.ly/getbhce >> docker-compose.yml;
+        
         blue_echo "Updating package lists..."
         sudo apt-get update -qq
 
@@ -237,7 +248,6 @@ case $choice in
         cd /opt/Kali-Rehydrate/
         dos2unix /opt/Kali-Rehydrate/repositories.txt
         
-
         # ----- Clone git repositories loop-----
         repositories_file="/opt/Kali-Rehydrate/repositories.txt"
         total_repositories=$(wc -l < "$repositories_file")
@@ -312,6 +322,15 @@ case $choice in
 
         # ---- mimipenguin -----
         blue_echo "Installing mimipenguin..."
+
+        #  ---- netexec -----
+        blue_echo "Installing netexec..."
+        pipx install git+https://github.com/Pennyw0rth/NetExec;
+        pipx ensurepath;
+
+        #  ---- poetry -----
+        blue_echo "Installing poetry..."
+        pipx install poetry
         
         # ---- Install Impacket ----
         blue_echo "Installing Impacket..."
@@ -379,10 +398,12 @@ case $choice in
         # ----- install empire -------
         blue_echo "Installing empire..."
         sudo chown kali:kali -R /opt/Empire;
+        # ----Switching to kali user to install empire because empire cannot install or run as root. Enter Password For user kali which is just kali if it asks ----
+        su kali
         cd /opt/Empire/setup;
-        sudo bash ./checkout-latest-tag.sh;
+        bash ./checkout-latest-tag.sh;
         cd ..
-        sudo bash ./ps-empire install -y;
+        bash ./ps-empire install -y;
 
         # ------- install Deathstar ---------
         blue_echo "Installing Deathstar..."
