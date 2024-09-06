@@ -134,6 +134,9 @@ case $choice in
         blue_echo "Installing vmfs-tools..."
         sudo apt-get install vmfs-tools -y -qq
 
+        blue_echo "Installing kpartx..."
+        sudo apt-get install kpartx -y -qq
+
         blue_echo "Installing  golang-go..."
         sudo apt-get install golang-go -y -qq
 
