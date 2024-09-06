@@ -131,6 +131,9 @@ case $choice in
         blue_echo "Installing pipx..."
         sudo apt-get install pipx -y -qq
 
+        blue_echo "Installing vmfs-tools..."
+        sudo apt-get install vmfs-tools -y -qq
+
         blue_echo "Installing  golang-go..."
         sudo apt-get install golang-go -y -qq
 
