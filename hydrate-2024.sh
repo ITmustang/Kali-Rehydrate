@@ -142,6 +142,9 @@ case $choice in
 
         blue_echo "Installing Chromium..."
         sudo apt-get install chromium -y -qq
+
+        blue_echo "Installing libnss3-tools..."
+        sudo apt-get install libnss3-tools -y -qq
         
         blue_echo "Installing Docker and Docker Compose..."
         sudo apt update
