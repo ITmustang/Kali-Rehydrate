@@ -106,8 +106,8 @@ case $choice in
         blue_echo "Upgrading installed packages..."
         sudo apt-get upgrade -y -qq
 
-        blue_echo "Installing Python3.11-venv..."
-        sudo apt install python3.11-venv
+        blue_echo "Installing Python3.12-venv..."
+        sudo apt install python3.12-venv
 
         blue_echo "dos2unix install..."
         sudo apt-get install dos2unix -y -qq
