@@ -148,6 +148,15 @@ case $choice in
 
         blue_echo "Installing libnss3-tools..."
         sudo apt-get install libnss3-tools -y -qq
+
+        blue_echo "Installing proxychains..."
+        sudo apt-get install proxychains4 -y -qq
+
+        blue_echo "Installing mitm6..."
+        sudo apt-get install mitm6 -y -qq
+
+        blue_echo "Installing responder..."
+        sudo apt-get install responder -y -qq
         
         blue_echo "Installing Docker and Docker Compose..."
         sudo apt update
