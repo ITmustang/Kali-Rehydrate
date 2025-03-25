@@ -272,7 +272,7 @@ case $choice in
         cd /opt/Kali-Rehydrate/
         dos2unix /opt/Kali-Rehydrate/repositories.txt
         
-        # ----- Clone git repositories loop (MODIFIED SECTION) -----
+        # ----- Clone git repositories loop -----
         repositories_file="/opt/Kali-Rehydrate/repositories.txt"
         total_repositories=$(wc -l < "$repositories_file")
         current_repo_index=1
@@ -305,7 +305,14 @@ case $choice in
         else
             echo "Error: Repositories file not found."
         fi
-
+        # ------ NEW: Scan ALL /opt folders for requirements.txt ------
+        blue_echo "Scanning all /opt subdirectories for requirements.txt files..."
+        for dir in /opt/*/ ; do
+            if [ -f "$dir/requirements.txt" ]; then
+                green_echo "Installing requirements.txt in: $dir"
+                pip3 install -r "$dir/requirements.txt" --break-system-packages
+            fi
+        done
         # ----- Setup bad characters txt file in /usr/opt/HackRepo ----
         blue_echo "Setting up Bad Characters File..."
         cd /opt/;
