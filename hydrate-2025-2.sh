@@ -1,6 +1,6 @@
 #!/bin/zsh
 # Hydrate Kali with testing preferences and pentest repos
-# Version 0.3.0
+# Version 0.3.1
 # Updated: 2025-03-25
 
 set -euo pipefail
@@ -24,7 +24,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # ----------- Menu Banner ------------
-version_number="v0.3.0"
+version_number="v0.3.1"
 clear
 purple_echo "Starting Kali Rehydration - Version $version_number"
 blue_echo "MENU:"
@@ -38,7 +38,7 @@ case $choice in
     apt-get update -y -qq
 
     apt-get install -y -qq \
-        gpg python3.13-venv dos2unix build-essential libkrb5-dev \
+        gpg python3.12-venv dos2unix build-essential libkrb5-dev \
         wine32:i386 python3-pip open-iscsi pipx vmfs-tools kpartx \
         golang-go chromium libnss3-tools proxychains4 mitm6 responder \
         docker.io gcc jq hostapd-wpe aircrack-ng python3-impacket \
@@ -129,14 +129,14 @@ case $choice in
     blue_echo "Installing BloodHound.py..."
     [ ! -d /opt/BloodHound.py ] && git clone https://github.com/dirkjanm/BloodHound.py /opt/BloodHound.py
     cd /opt/BloodHound.py
-    pip3 install . --break-system-packages
+    pip3 install .
 
     cd /opt/wafw00f && pipx install git+https://github.com/EnableSecurity/wafw00f.git
 
     cd /opt/pywerview
     python3 -m venv venv
     source venv/bin/activate
-    pip3 install -r requirements.txt --break-system-packages
+    pip install -r requirements.txt --break-system-packages
     deactivate
 
     chown kali:kali -R /opt/Empire
@@ -145,6 +145,15 @@ case $choice in
     cd /opt/DeathStar
     pip3 install -r requirements.txt --break-system-packages
     pipx install deathstar-empire
+
+    # --------- Install smbclient-ng ----------
+    blue_echo "Installing smbclient-ng..."
+    if [ -d "/opt/smbclient-ng" ]; then
+        cd /opt/smbclient-ng
+        pipx install smbclientng
+    else
+        red_echo "smbclient-ng directory not found. Ensure it was cloned properly."
+    fi
 
     apt-get autoremove -y -qq
 
