@@ -22,7 +22,5 @@ https://github.com/jtesta/ssh-audit
 https://github.com/dirkjanm/mitm6
 https://github.com/BC-SECURITY/Empire --recursive
 https://github.com/byt3bl33d3r/DeathStar
-
-# --- New Additions (from script analysis) ---
 https://github.com/dirkjanm/BloodHound.py
 https://github.com/Mazars-Tech/AD_Miner.git
