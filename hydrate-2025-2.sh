@@ -38,7 +38,7 @@ case $choice in
     apt-get update -y -qq
 
     apt-get install -y -qq \
-        gpg python3.12-venv dos2unix build-essential libkrb5-dev \
+        gpg python3.13-venv dos2unix build-essential libkrb5-dev \
         wine32:i386 python3-pip open-iscsi pipx vmfs-tools kpartx \
         golang-go chromium libnss3-tools proxychains4 mitm6 responder \
         docker.io gcc jq hostapd-wpe aircrack-ng python3-impacket \
