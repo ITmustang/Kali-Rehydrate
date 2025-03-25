@@ -272,7 +272,7 @@ case $choice in
         cd /opt/Kali-Rehydrate/
         dos2unix /opt/Kali-Rehydrate/repositories.txt
         
-        # ----- Clone git repositories loop-----
+        # ----- Clone git repositories loop (MODIFIED SECTION) -----
         repositories_file="/opt/Kali-Rehydrate/repositories.txt"
         total_repositories=$(wc -l < "$repositories_file")
         current_repo_index=1
@@ -291,6 +291,12 @@ case $choice in
                 else
                     git clone "$repo_url" "$destination" $args
                     green_echo "Git repository cloned successfully."
+
+                    # --- New Logic: requirements.txt install ---
+                    if [ -f "$destination/requirements.txt" ]; then
+                        blue_echo "Found requirements.txt in $repo_name. Installing Python dependencies..."
+                        pip3 install -r "$destination/requirements.txt" --break-system-packages
+                    fi
                 fi
 
                 ((current_repo_index++))
