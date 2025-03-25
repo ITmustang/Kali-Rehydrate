@@ -129,14 +129,14 @@ case $choice in
     blue_echo "Installing BloodHound.py..."
     [ ! -d /opt/BloodHound.py ] && git clone https://github.com/dirkjanm/BloodHound.py /opt/BloodHound.py
     cd /opt/BloodHound.py
-    pip3 install .
+    pip3 install . --break-system-packages
 
     cd /opt/wafw00f && pipx install git+https://github.com/EnableSecurity/wafw00f.git
 
     cd /opt/pywerview
     python3 -m venv venv
     source venv/bin/activate
-    pip install -r requirements.txt --break-system-packages
+    pip3 install -r requirements.txt --break-system-packages
     deactivate
 
     chown kali:kali -R /opt/Empire
