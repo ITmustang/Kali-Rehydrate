@@ -122,6 +122,9 @@ case $choice in
         dpkg --add-architecture i386
         sudo apt update -y -qq
 
+        blue_echo "Installing wine32..."
+        sudo apt-get install wine32 -y -qq
+
         blue_echo "Installing wine32 for 32-bit compatibility..."
         sudo apt -y install wine32:i386 -y -qq
 
