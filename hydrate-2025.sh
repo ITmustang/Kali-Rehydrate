@@ -131,6 +131,9 @@ case $choice in
         blue_echo "Installing open-iscsi..."
         sudo apt-get install open-iscsi -y -qq
 
+        blue_echo "Installing gpp-decrypt..."
+        sudo apt-get install gpp-decrypt -y -qq
+
         blue_echo "Installing pipx..."
         sudo apt-get install pipx -y -qq
 
