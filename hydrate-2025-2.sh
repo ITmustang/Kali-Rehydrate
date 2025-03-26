@@ -35,17 +35,10 @@ read -p "Enter your choice: " choice
 case $choice in
 1)
     blue_echo "Updating system and installing base packages..."
-    apt-get update -y -qq
+    sudo apt-get update -y -qq
 
-    apt-get install -y -qq \
-        gpg python3.13-venv dos2unix build-essential libkrb5-dev \
-        wine32:i386 python3-pip open-iscsi pipx vmfs-tools kpartx \
-        golang-go chromium libnss3-tools proxychains4 responder \
-        docker.io gcc jq hostapd-wpe aircrack-ng python3-impacket \
-        impacket-scripts mingw-w64 pure-ftpd crackmapexec rinetd \
-        libc6-dev terminator seclists steghide stegcracker rlwrap \
-        veil veil-evasion shellter airgeddon xrdp ssh openssh-server \
-        npm leafpad mitm6 gpp-decrypt
+    blue_echo "Installing apt-get tools.."
+    sudo apt-get install -y -qq gpg python3.13-venv dos2unix build-essential libkrb5-dev wine32:i386 python3-pip open-iscsi pipx vmfs-tools kpartx golang-go chromium libnss3-tools proxychains4 responder docker.io gcc jq hostapd-wpe aircrack-ng python3-impacket impacket-scripts mingw-w64 pure-ftpd crackmapexec rinetd libc6-dev terminator seclists steghide stegcracker rlwrap veil veil-evasion shellter airgeddon xrdp ssh openssh-server npm leafpad mitm6 gpp-decrypt
 
     systemctl enable docker --now
     usermod -aG docker "$USER"
