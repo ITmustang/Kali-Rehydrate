@@ -200,6 +200,9 @@ case $choice in
         blue_echo "Installing Rinetd..."
         sudo apt-get install rinetd -y -qq
 
+        blue_echo "Installing mitm6..."
+        sudo apt-get install mitm6 -y -qq
+
         blue_echo "Installing GCC-9 base, libgcc-9-dev, libc6-dev..."
         sudo apt-get install gcc-9-base libgcc-9-dev libc6-dev -y -qq
 
