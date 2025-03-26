@@ -95,7 +95,7 @@ read choice
 case $choice in
     1)
         blue_echo "Kali is thirty and must rehydrate... Starting \033[35mKali \033[32mRehydrate..."
-
+        sleep 5
         # ----- Install packages and update/upgrade -----
         blue_echo "Installing gpg..."
         sudo apt-get install gpg
