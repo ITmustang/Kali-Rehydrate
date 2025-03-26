@@ -252,6 +252,7 @@ case $choice in
 
         blue_echo "Installing AD-Miner..."
         pipx install 'git+https://github.com/Mazars-Tech/AD_Miner.git'
+        pipx ensurepath;
         
         blue_echo "Installing Bloodhound-ce..."
         cd /opt/;
