@@ -324,7 +324,7 @@ case $choice in
         else cp /usr/bin/badchars.txt /opt/Kali-Rehydrate/badchars.txt
         fi
 
-        # ---- misc installs ------ 
+        # ---- docker image installs ------ 
         blue_echo "Installing gowitness..."
         docker pull ghcr.io/sensepost/gowitness:latest
 
