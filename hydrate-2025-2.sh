@@ -40,7 +40,7 @@ case $choice in
     apt-get install -y -qq \
         gpg python3.13-venv dos2unix build-essential libkrb5-dev \
         wine32:i386 python3-pip open-iscsi pipx vmfs-tools kpartx \
-        golang-go chromium libnss3-tools proxychains4 mitm6 responder \
+        golang-go chromium libnss3-tools proxychains4 responder \
         docker.io gcc jq hostapd-wpe aircrack-ng python3-impacket \
         impacket-scripts mingw-w64 pure-ftpd crackmapexec rinetd \
         gcc-9-base libgcc-9-dev libc6-dev terminator seclists \
