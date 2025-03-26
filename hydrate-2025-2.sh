@@ -37,6 +37,10 @@ case $choice in
     blue_echo "Updating system and installing base packages..."
     sudo apt-get update -y -qq
 
+    blue_echo "Adding 32bit architecture..."
+    sudo dpkg --add-architecture i386
+    sudo apt-get update
+    
     blue_echo "Installing apt-get tools.."
     sudo apt-get install -y -qq gpg python3.13-venv dos2unix build-essential libkrb5-dev wine32:i386 python3-pip open-iscsi pipx vmfs-tools kpartx golang-go chromium libnss3-tools proxychains4 responder docker.io gcc jq hostapd-wpe aircrack-ng python3-impacket impacket-scripts mingw-w64 pure-ftpd crackmapexec rinetd libc6-dev terminator seclists steghide stegcracker rlwrap veil veil-evasion shellter airgeddon xrdp ssh openssh-server npm leafpad mitm6 gpp-decrypt
 
