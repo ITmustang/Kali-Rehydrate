@@ -200,9 +200,6 @@ case $choice in
         blue_echo "Installing Pure-FTPd..."
         sudo apt-get install pure-ftpd -y -qq
 
-        blue_echo "Installing CrackMapExec..."
-        sudo apt-get install crackmapexec -y -qq
-
         blue_echo "Installing Rinetd..."
         sudo apt-get install rinetd -y -qq
 
