@@ -327,8 +327,7 @@ case $choice in
 
         # ---- misc installs ------ 
         blue_echo "Installing gowitness..."
-        blue_echo "This will be globally available..."
-        sudo go install github.com/sensepost/gowitness@latest
+        docker pull ghcr.io/sensepost/gowitness:latest
 
         # ----- Pip Install Respositories -----
         blue_echo "Pip installing pycryptodome/cython/ssh-audit..."
