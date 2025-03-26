@@ -94,7 +94,7 @@ read choice
 # Process User Choice
 case $choice in
     1)
-        blue_echo "Starting \033[35mKali \033[32mRehydrate..."
+        blue_echo "Kali is thirty and must rehydrate... Starting \033[35mKali \033[32mRehydrate..."
 
         # ----- Install packages and update/upgrade -----
         blue_echo "Installing gpg..."
