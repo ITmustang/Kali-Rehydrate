@@ -397,11 +397,6 @@ case $choice in
         # ---- Install Trustedsec-Unicorn ----
         blue_echo "Installing Trustedsec-Unicorn..."
 
-        # Install wafw00f ----
-        blue_echo "Installing wafw00f..."
-        cd /opt/wafw00f;
-        pipx install git+https://github.com/EnableSecurity/wafw00f.git;
-
         # ---- Install NetRipper ---- 
         blue_echo "Installing NetRipper..."
 
