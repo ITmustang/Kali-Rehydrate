@@ -112,7 +112,7 @@ case $choice in
         blue_echo "dos2unix install..."
         sudo apt-get install dos2unix -y -qq
 
-        blue_echo "Installing build essentials..."
+        blue_echo "Installing build essential..."
         sudo apt install build-essential -y -qq
 
         blue_echo "Installing libkrb5-dev..."
@@ -205,9 +205,6 @@ case $choice in
 
         blue_echo "Installing mitm6..."
         sudo apt-get install mitm6 -y -qq
-
-        blue_echo "Installing GCC-9 base, libgcc-9-dev, libc6-dev..."
-        sudo apt-get install libc6-dev -y -qq
 
         blue_echo "Installing Terminator..."
         sudo apt-get install terminator -y -qq
