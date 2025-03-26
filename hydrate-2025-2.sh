@@ -43,9 +43,9 @@ case $choice in
         golang-go chromium libnss3-tools proxychains4 responder \
         docker.io gcc jq hostapd-wpe aircrack-ng python3-impacket \
         impacket-scripts mingw-w64 pure-ftpd crackmapexec rinetd \
-        gcc-9-base libgcc-9-dev libc6-dev terminator seclists \
-        steghide stegcracker rlwrap veil veil-evasion shellter \
-        airgeddon xrdp ssh openssh-server npm leafpad mitm6 gpp-decrypt
+        libc6-dev terminator seclists steghide stegcracker rlwrap \
+        veil veil-evasion shellter airgeddon xrdp ssh openssh-server \
+        npm leafpad mitm6 gpp-decrypt
 
     systemctl enable docker --now
     usermod -aG docker "$USER"
