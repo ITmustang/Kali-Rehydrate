@@ -106,8 +106,8 @@ case $choice in
         blue_echo "Upgrading installed packages..."
         sudo apt-get upgrade -y -qq
 
-        blue_echo "Installing Python3.12-venv..."
-        sudo apt install python3.12-venv
+        blue_echo "Installing Python3.13-venv..."
+        sudo apt install python3.13-venv
 
         blue_echo "dos2unix install..."
         sudo apt-get install dos2unix -y -qq
@@ -247,10 +247,6 @@ case $choice in
         blue_echo "Installing misc PIP3 tools..."
         pip3 install pandas openpyxl requests beautifulsoup4 stem tor shell-gpt xlsxwriter lolcat --break-system-packages 
 
-        #  ---- leafpad -----
-        blue_echo "Installing leafpad..."
-        sudo apt-get install leafpad 
-        
         blue_echo "Installing npm..."
         sudo apt-get install npm -y -qq
 
@@ -332,8 +328,8 @@ case $choice in
         blue_echo "Installing gowitness..."
         docker pull ghcr.io/sensepost/gowitness:latest
 
-        # ----- Pip Install Respositories -----
-        blue_echo "Pip installing pycryptodome/cython/ssh-audit..."
+        # ----- Pip3 Install Respositories -----
+        blue_echo "Pip3 installing pycryptodome/cython/ssh-audit..."
         pip3 install pycryptodome --break-system-packages;
         pip3 install ssh-audit --break-system-packages;
         pip3 install cython --break-system-packages;
@@ -348,7 +344,7 @@ case $choice in
        cd /opt/;
        sudo git clone https://github.com/dirkjanm/BloodHound.py.git
        cd /opt/BloodHound.py/;
-       pip3 install .
+       pip3 install . --break-system-packages
 
         # ---- windows-privesc-check ----
         blue_echo "Installing windows-privesc-check..."
@@ -431,11 +427,6 @@ case $choice in
 
         # ---- Install ssh-audit ----
         blue_echo "Installing ssh-audit..."
-
-        # ---- install mitm6 ----
-        blue_echo "Installing mitm6..."
-        cd /opt/mitm6;
-        pip3 install -r requirements.txt --break-system-packages; 
 
         # ----- install empire -------
         blue_echo "Installing empire..."
