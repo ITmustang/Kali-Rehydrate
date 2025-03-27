@@ -138,7 +138,7 @@ case $choice in
         sudo apt-get install ipmitool -y -qq
 
         blue_echo "Installing smbclientng..."
-        sudo apt-get install smbclientng -y -qq
+        pipx install smbclientng
 
         blue_echo "Installing gpp-decrypt..."
         sudo apt-get install gpp-decrypt -y -qq
