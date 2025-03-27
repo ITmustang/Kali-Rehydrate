@@ -134,6 +134,12 @@ case $choice in
         blue_echo "Installing open-iscsi..."
         sudo apt-get install open-iscsi -y -qq
 
+        blue_echo "Installing ipmitool..."
+        sudo apt-get install ipmitool -y -qq
+
+        blue_echo "Installing smbclientng..."
+        sudo apt-get install smbclientng -y -qq
+
         blue_echo "Installing gpp-decrypt..."
         sudo apt-get install gpp-decrypt -y -qq
 
