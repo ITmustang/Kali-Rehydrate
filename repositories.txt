@@ -1,5 +1,4 @@
 https://github.com/pentestmonkey/windows-privesc-check
-https://github.com/21y4d/nmapAutomator
 https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
 https://github.com/rapid7/ssh-badkeys
 https://github.com/samratashok/nishang
