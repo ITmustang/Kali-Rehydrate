@@ -109,6 +109,9 @@ case $choice in
         blue_echo "Installing Python3.13-venv..."
         sudo apt install python3.13-venv
 
+        blue_echo "Installing pipx..."
+        sudo apt-get install pipx -y -qq
+        
         blue_echo "dos2unix install..."
         sudo apt-get install dos2unix -y -qq
 
@@ -142,9 +145,6 @@ case $choice in
 
         blue_echo "Installing gpp-decrypt..."
         sudo apt-get install gpp-decrypt -y -qq
-
-        blue_echo "Installing pipx..."
-        sudo apt-get install pipx -y -qq
 
         blue_echo "Installing vmfs-tools..."
         sudo apt-get install vmfs-tools -y -qq
@@ -333,22 +333,18 @@ case $choice in
         docker pull ghcr.io/sensepost/gowitness:latest
 
         # ----- Pip3 Install Respositories -----
-        blue_echo "Pip3 installing pycryptodome/cython/ssh-audit..."
+        blue_echo "pip3 installing pycryptodome/cython/ssh-audit..."
         pip3 install pycryptodome --break-system-packages;
         pip3 install ssh-audit --break-system-packages;
         pip3 install cython --break-system-packages;
         
-        # ----- Set executable permissions on git repos -----
-        blue_echo "Setting up permissions..."
-        chmod +x /opt/nmapAutomator/nmapAutomator.sh;
-       
-       # ----- Install BloodHound.py -----
-       blue_echo "Installing BloodHound.py..."
-       blue_echo "This is the only ingestor as of now that is compatible with bloodhound-ce..."
-       cd /opt/;
-       sudo git clone https://github.com/dirkjanm/BloodHound.py.git
-       cd /opt/BloodHound.py/;
-       pip3 install . --break-system-packages
+        # ----- Install BloodHound.py -----
+        blue_echo "Installing BloodHound.py..."
+        blue_echo "This is the only ingestor as of now that is compatible with bloodhound-ce..."
+        cd /opt/;
+        sudo git clone https://github.com/dirkjanm/BloodHound.py.git
+        cd /opt/BloodHound.py/;
+        pip3 install . --break-system-packages
 
         # ---- windows-privesc-check ----
         blue_echo "Installing windows-privesc-check..."
