@@ -377,11 +377,6 @@ case $choice in
         python3 -m pipx install impacket;
         pipx ensurepath;
 
-        # ---- Install Dirsearch Requirements ----
-        blue_echo "Installing Dirsearch..."
-        cd /opt/dirsearch;
-        pip3 install -r requirements.txt --break-system-packages;
-
         # ---- Install MS17-010 ----
         blue_echo "Installing MS17-010 Repo..."
 
