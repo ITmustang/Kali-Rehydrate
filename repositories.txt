@@ -4,14 +4,12 @@ https://github.com/rapid7/ssh-badkeys
 https://github.com/samratashok/nishang
 https://github.com/huntergregal/mimipenguin
 https://github.com/CoreSecurity/impacket
-https://github.com/maurosoria/dirsearch --depth 1
 https://github.com/worawit/MS17-010
 https://github.com/ropnop/kerbrute
 https://github.com/ivan-sincek/php-reverse-shell
 https://github.com/OJ/gobuster
 https://github.com/trustedsec/unicorn
 https://github.com/EnableSecurity/wafw00f
-https://github.com/the-useless-one/pywerview
 https://github.com/NytroRST/NetRipper
 https://github.com/orlyjamie/mimikittenz
 https://github.com/danielbohannon/Invoke-Obfuscation
