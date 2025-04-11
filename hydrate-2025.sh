@@ -134,6 +134,9 @@ case $choice in
         blue_echo "Installing Python 3 pip..."
         sudo apt-get install python3-pip -y -qq
 
+        blue_echo "Installing tmux..."
+        sudo apt-get install tmux -y -qq
+
         blue_echo "Installing open-iscsi..."
         sudo apt-get install open-iscsi -y -qq
 
