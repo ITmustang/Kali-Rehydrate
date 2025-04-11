@@ -13,7 +13,7 @@ https://github.com/NytroRST/NetRipper
 https://github.com/orlyjamie/mimikittenz
 https://github.com/danielbohannon/Invoke-Obfuscation
 https://github.com/hmaverickadams/autoNTDS
-https://github.com/drwetter/testssl.sh --depth 1
+https://github.com/drwetter/testssl.sh
 https://github.com/jtesta/ssh-audit
 https://github.com/BC-SECURITY/Empire --recursive
 https://github.com/byt3bl33d3r/DeathStar
