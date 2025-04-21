@@ -440,7 +440,7 @@ case $choice in
         sudo apt-get update && sudo dpkg --configure -a;
 
         blue_echo "Configuring and Starting TailScale..."
-        sudo tailscale up
+        sudo tailscale up --ssh --advertise-tags=tag:ssh
         sudo systemctl enable --now tailscaled
         sudo systemctl start tailscaled
 
