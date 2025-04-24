@@ -4,8 +4,7 @@
 ## 🧪 What It Does
 
 🔹 Prepares a fully equipped Kali Linux environment for offensive security testing and lab use.
-
-    - 📦 Input: Root privileges required (sudo ./hydrate-2025.sh)
+ - 📦 Input: Root privileges required (sudo ./hydrate-2025.sh)
     - 🚀 Output: Updated, tool-loaded, Docker-configured Kali with cloned repos and installed dependencies
 
     - 📦 Runs full system update, upgrade, and dist-upgrade
@@ -21,8 +20,7 @@
         pandas, requests, bs4, stem, tor, openpyxl, xlsxwriter, lolcat, shell-gpt
 
 🔹🧪 Installs common pentest tools:
-
-     - responder, mitm6, proxychains4, veil, veil-evasion, hostapd-wpe, aircrack-ng, impacket, gpp-decrypt, pure-ftpd, rinetd, steghide, stegcracker, shellter, terminator, seclists, open-iscsi, ipmitool, xrdp, ssh, openssh-server
+ - responder, mitm6, proxychains4, veil, veil-evasion, hostapd-wpe, aircrack-ng, impacket, gpp-decrypt, pure-ftpd, rinetd, steghide, stegcracker, shellter, terminator, seclists, open-iscsi, ipmitool, xrdp, ssh, openssh-server
 
     - 🧬 Installs pip tools: netexec, cython, pycryptodome, ssh-audit
 
