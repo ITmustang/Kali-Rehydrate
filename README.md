@@ -41,150 +41,66 @@
                /_/ |_/_____/_/ /_/   /_/_____/_/ |_/_/  |_/_/ /_____/   
 
 🛠️ What It Does
+    Prepares a fully equipped Kali Linux environment for offensive security testing and lab use.
 
-    Fully rehydrates Kali Linux with your preferred pentest tools, services, configurations, and repositories — all from a single script run.
+    🧃 Input: Root privileges required (sudo ./hydrate-2025.sh)
 
-    🧃 Input: Must be run with sudo or as root
+    🚀 Output: Updated, tool-loaded, Docker-configured Kali with cloned repos and installed dependencies
 
-    🚀 Output: A Kali system loaded with tools, frameworks, Docker containers, remote access configs, and cloned GitHub repositories
+⚠️ Note: Includes the classic Kali ASCII dragon logo, shown before hydration begins.
 
-🐉 Includes the classic Kali ASCII dragon logo and version banner for a dramatic launch!
-🔧 Features & Workflow
+    ✅ Root check: Ensures script is run as root before proceeding
 
-    🛑 Root Privilege Check
+    🎨 Color functions: Blue, green, red, yellow, purple echo formatting
 
-        Exits if not executed as root
+    🐉 Displays version (v0.2.0) and Kali ASCII dragon banner
 
-    🎨 Colorized Output
+    📋 Menu: [1] Start, [2] Exit
 
-        Custom blue_echo, green_echo, red_echo, yellow_echo, purple_echo functions
+    📦 System prep: apt update, upgrade, dist-upgrade
 
-    📟 Menu Display
+    🏗 Adds i386 architecture support
 
-        Option 1: Start hydration
+    🧰 Installs base tools: gpg, build-essential, jq, libkrb5-dev, dos2unix, gcc, tmux, chromium, libnss3-tools
 
-        Option 2: Exit
+    🐍 Python setup: python3.13-venv, pip3, pipx, with libraries like pandas, requests, bs4, stem, xlsxwriter, lolcat, etc.
 
-💾 System Setup
+    🔧 Installs common pentest tools:
 
-    Updates package lists
+        responder, mitm6, proxychains4, aircrack-ng, hostapd-wpe, gpp-decrypt, impacket, veil, veil-evasion, shellter, steghide, stegcracker, rlwrap, terminator, seclists, open-iscsi, ipmitool, pure-ftpd, rinetd, xrdp, ssh, openssh-server
 
-    Upgrades and dist-upgrades system packages
+    🧪 Pip tools installed: netexec, cython, pycryptodome, ssh-audit, shell-gpt
 
-    Adds 32-bit architecture (i386)
+    🐳 Docker setup: Installs and configures Docker + Compose, adds user to docker group
 
-    Installs core utilities:
+    🧬 BloodHound-CE: Pulls docker-compose.yml, sets up in /opt/bloodhound-ce
 
-        gpg, build-essential, libkrb5-dev, jq, gcc, tmux, chromium, dos2unix, python3.13-venv, pipx, pip3, npm
+    📁 Repos cloned from /opt/Kali-Rehydrate/repositories.txt
 
-🧪 Python & Pip Tools
+    📦 Automatically installs requirements.txt for each cloned repo
 
-    Installs:
+    🔁 Recursively installs all requirements.txt under /opt/*/
 
-        pandas, openpyxl, requests, bs4, stem, tor, xlsxwriter, shell-gpt, lolcat
+    📄 Creates badchars.txt in /opt/Kali-Rehydrate/ if missing
 
-    Ensures pipx is available and paths are set
+    🐾 Pulls gowitness Docker image
 
-📦 Pentest Tools & Utilities
+    🧠 Clones & installs:
 
-    Tools installed via apt or pipx:
+        BloodHound.py, AD-Miner, DeathStar, NetRipper, mimikittenz, autoNTDS, php-reverse-shell, kerbrute, testssl.sh, nishang, mimipenguin, windows-privesc-check, Invoke-Obfuscation, Unicorn, MS17-010, ssh-badkeys, privilege-escalation-awesome-scripts-suite
 
-        responder, mitm6, hostapd-wpe, aircrack-ng, proxychains4, veil, veil-evasion, netexec, ssh-audit, gpp-decrypt, vmfs-tools, kpartx, golang-go, libnss3-tools, impacket, impacket-scripts, mingw-w64, pure-ftpd, rinetd, terminator, seclists, steghide, stegcracker, rlwrap, xrdp, ssh, openssh-server, shellter, airgeddon
+    🏴 Installs Empire (as user sca)
 
-🐳 Docker Setup & BloodHound
+    🎯 Installs DeathStar via pipx
 
-    Installs Docker and Docker Compose
+    🔐 Installs and enables Tailscale SSH with tag tag:ssh
 
-    Enables Docker and adds user to group
+    🖥 Sets up XRDP
 
-    Deploys BloodHound-CE with preloaded docker-compose.yml
+    🌐 Starts SSH service
 
-🧬 GitHub Repo Cloning & Setup
+    🧪 Optionally installs: Nessus, TeamViewer
 
-    Converts repositories.txt to Unix format
+    🧹 Cleans up unused packages with autoremove
 
-    Loops through each repo in /opt/Kali-Rehydrate/repositories.txt
-
-        Clones to /opt/
-
-        Checks for and installs requirements.txt
-
-    Recursively scans all /opt/*/ directories for additional requirements.txt files and installs them
-
-🐾 Specialized Setup
-
-    Creates and places badchars.txt if missing
-
-    Pulls and installs:
-
-        gowitness Docker image
-
-        BloodHound.py
-
-        AD-Miner
-
-        DeathStar
-
-        NetRipper
-
-        mimikittenz
-
-        Invoke-Obfuscation
-
-        autoNTDS
-
-        php-reverse-shell
-
-        kerbrute
-
-        testssl.sh
-
-        TrustedSec Unicorn
-
-        MS17-010 repo
-
-        windows-privesc-check
-
-        privilege-escalation-awesome-scripts-suite
-
-        ssh-badkeys
-
-        nishang
-
-        mimipenguin
-
-🎯 Empire & DeathStar Install
-
-    Clones Empire repo and installs it (via user sca)
-
-    Installs DeathStar and required dependencies
-
-🔐 Remote Access
-
-    Installs and starts:
-
-        xrdp
-
-        ssh services
-
-    Installs and configures Tailscale with:
-
-        Tag tag:ssh
-
-        SSH enabled
-
-        Automatic startup via systemctl
-
-🔍 Extra Optional Installs
-
-    Installs Tenable Nessus
-
-    Installs TeamViewer if not already installed
-
-🧹 Cleanup & Final Touches
-
-    Runs autoremove to clean unused packages
-
-    Ends with message:
-
-        ✅ “Kali Rehydration is complete. Kali’s thirst has been quenched.”
+    ✅ Final message: "Kali Rehydration is complete. Kali's thirst has been quenched."
