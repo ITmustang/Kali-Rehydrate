@@ -1,106 +1,65 @@
-# Kali-Rehydrate
+🧪 What It Does
 
+🔹 Prepares a fully equipped Kali Linux environment for offensive security testing and lab use.
 
-                                    .^                                
-                                   :PB7                               
-                                  :G!.PJ                              
-                                 :B!   PY                             
-                                ^B~     5Y                            
-      ....::::::::.....        !B^       55                           
-    ..:::^^~~!!!7??JJJJJJJ?7!~^J^         JP.                         
-                 ...:::^~!7?JY555Y?!^..    7G:                        
-       ..::^~!77?JJJYYYYYYYYYYYY5PGG#^..    7G.                       
-      :^~~!77777!!!~~~^^^^^^^~!7?JY55P5GJ..  JY.                    
-             .:~7JYYYJ?!~^YJ.........~#GYJ??7!~^^^~~^:                
-         .^!7??7!^:.     ~#:     ..^?G&#BGPPGGBBGB5?J77~.             
-       :^~~^:.          .B7     ..7#&Y!::.....:7B?YPBGB5J~..          
-       .                YP     ..7@#~...       .B~ .:~?#@&J:.         
-                       ^#:     .:G@J...         J5   ..~JP#P!^.       
-                       5J      .:G@5:..         ~B       .:7P?.       
-                      :#:      ..7&@J:..        :#.                   
-                      ?G        ..!B@B?~:..     :#:                   
-                      5J         ..:7P##BP5YJJJJJB?!!~^:..            
-                      B!             .:~7?JJYYY5GGGB#&&BPY?7~:        
-                      #^                       .G!.::~7J5GPJJYJ!.     
-                      G!                       !B      ..^?PJ^~JY!    
-                      YY                       G7         .:YG^.^J7   
-                      ^#:                     JP           ..7G^..!^  
-                       ?P                    7G.            . 75....  
-                        JP:                 JP:                J~     
-                         ~5J!^.          :75?                  :!     
-                           ^!?JJ?7!!!!!?JJ!.                    :     
-                                .:^~~~^:.                       :                       
-                      __ __ ___    __    ____ 
-                     // //  /  |  / /   /  _/                              
-                    / ,<  / /| | / /    / /                                
-                   / /| |/ ___ |/ /____/ /                                 
-                  /_/ |_/_/ _|_/_____/___/ ______  ____  ___  ____________
-                  / __ \/ ____/ / / /\ \/ / __ \/ __ \/   |/_  __/ ____/
-                 / /_/ / __/ / /_/ /  \  / / / / /_/ / /| | / / / __/   
-                / _, _/ /___/ __  /   / / /_/ / _, _/ ___ |/ / / /___   
-               /_/ |_/_____/_/ /_/   /_/_____/_/ |_/_/  |_/_/ /_____/   
-
-🛠️ What It Does
-    Prepares a fully equipped Kali Linux environment for offensive security testing and lab use.
-
-    🧃 Input: Root privileges required (sudo ./hydrate-2025.sh)
+    📦 Input: Root privileges required (sudo ./hydrate-2025.sh)
 
     🚀 Output: Updated, tool-loaded, Docker-configured Kali with cloned repos and installed dependencies
 
-⚠️ Note: Includes the classic Kali ASCII dragon logo, shown before hydration begins.
+    ⚠️ Note: Includes the classic Kali ASCII dragon logo, shown before hydration begins.
 
-    ✅ Root check: Ensures script is run as root before proceeding
+    ✅ Root check to ensure script is run with sudo
 
-    🎨 Color functions: Blue, green, red, yellow, purple echo formatting
+    🎨 Colorized echo output (blue, green, red, yellow, purple)
 
-    🐉 Displays version (v0.2.0) and Kali ASCII dragon banner
+    🐉 Displays Kali ASCII dragon and version banner (v0.2.0)
 
     📋 Menu: [1] Start, [2] Exit
 
-    📦 System prep: apt update, upgrade, dist-upgrade
+    📦 Runs full system update, upgrade, and dist-upgrade
 
-    🏗 Adds i386 architecture support
+    🏗 Adds i386 architecture for Wine compatibility
 
-    🧰 Installs base tools: gpg, build-essential, jq, libkrb5-dev, dos2unix, gcc, tmux, chromium, libnss3-tools
+    🧰 Installs core utilities:
 
-    🐍 Python setup: python3.13-venv, pip3, pipx, with libraries like pandas, requests, bs4, stem, xlsxwriter, lolcat, etc.
+        gpg, build-essential, jq, libkrb5-dev, dos2unix, gcc, tmux, chromium, libnss3-tools
 
-    🔧 Installs common pentest tools:
+    🐍 Sets up Python 3.13 venv and installs tools via pip3 and pipx:
 
-        responder, mitm6, proxychains4, aircrack-ng, hostapd-wpe, gpp-decrypt, impacket, veil, veil-evasion, shellter, steghide, stegcracker, rlwrap, terminator, seclists, open-iscsi, ipmitool, pure-ftpd, rinetd, xrdp, ssh, openssh-server
+        pandas, requests, bs4, stem, tor, openpyxl, xlsxwriter, lolcat, shell-gpt
 
-    🧪 Pip tools installed: netexec, cython, pycryptodome, ssh-audit, shell-gpt
+    🧪 Installs common pentest tools:
 
-    🐳 Docker setup: Installs and configures Docker + Compose, adds user to docker group
+        responder, mitm6, proxychains4, veil, veil-evasion, hostapd-wpe, aircrack-ng, impacket, gpp-decrypt, pure-ftpd, rinetd, steghide, stegcracker, shellter, terminator, seclists, open-iscsi, ipmitool, xrdp, ssh, openssh-server
 
-    🧬 BloodHound-CE: Pulls docker-compose.yml, sets up in /opt/bloodhound-ce
+    🧬 Installs pip tools: netexec, cython, pycryptodome, ssh-audit
 
-    📁 Repos cloned from /opt/Kali-Rehydrate/repositories.txt
+    🐳 Installs Docker and Docker Compose
 
-    📦 Automatically installs requirements.txt for each cloned repo
+    🧱 Configures BloodHound-CE in /opt/bloodhound-ce with docker-compose.yml
 
-    🔁 Recursively installs all requirements.txt under /opt/*/
+    📁 Clones GitHub repos listed in /opt/Kali-Rehydrate/repositories.txt
 
-    📄 Creates badchars.txt in /opt/Kali-Rehydrate/ if missing
+    📦 Installs Python dependencies for each repo (requirements.txt)
 
-    🐾 Pulls gowitness Docker image
+    🔁 Recursively scans /opt/*/ for additional requirements.txt files
 
-    🧠 Clones & installs:
+    📄 Adds badchars.txt if missing in /opt/Kali-Rehydrate/
 
-        BloodHound.py, AD-Miner, DeathStar, NetRipper, mimikittenz, autoNTDS, php-reverse-shell, kerbrute, testssl.sh, nishang, mimipenguin, windows-privesc-check, Invoke-Obfuscation, Unicorn, MS17-010, ssh-badkeys, privilege-escalation-awesome-scripts-suite
+    🧠 Clones and installs:
 
-    🏴 Installs Empire (as user sca)
+        BloodHound.py, AD-Miner, DeathStar, NetRipper, mimikittenz, autoNTDS, Invoke-Obfuscation, Unicorn, php-reverse-shell, kerbrute, testssl.sh, nishang, mimipenguin, windows-privesc-check, MS17-010, ssh-badkeys, privilege-escalation-awesome-scripts-suite
 
-    🎯 Installs DeathStar via pipx
+    🏴 Installs Empire in /opt/Empire (runs as user sca)
 
-    🔐 Installs and enables Tailscale SSH with tag tag:ssh
+    🎯 Installs DeathStar CLI using pipx
 
-    🖥 Sets up XRDP
+    🔐 Configures and enables Tailscale SSH (--advertise-tags=tag:ssh)
 
-    🌐 Starts SSH service
+    🖥 Enables and starts XRDP and SSH services
 
-    🧪 Optionally installs: Nessus, TeamViewer
+    🧪 Installs Tenable Nessus and TeamViewer (if not present)
 
-    🧹 Cleans up unused packages with autoremove
+    🧹 Final system cleanup with apt autoremove
 
-    ✅ Final message: "Kali Rehydration is complete. Kali's thirst has been quenched."
+    ✅ Displays message: “Kali Rehydration is complete. Kali’s thirst has been quenched.”
