@@ -443,7 +443,6 @@ case $choice in
         sudo systemctl enable --now tailscaled
         sudo tailscale up --ssh --advertise-tags=tag:ssh
         
-
         # ----- install nessus ------
         blue_echo "Installing Tenable Nessus..."
         cd /opt/ 
