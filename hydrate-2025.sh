@@ -274,7 +274,7 @@ case $choice in
 
         # ----- Tidy up -----
         blue_echo "Removing unnecessary packages..."
-        sudo apt autoremove -y -qq
+        sudo apt autoremove && apt autoclean -y -qq
 
         # ------ git repositories.txt dos2unix clean-up ------------
         blue_echo "converting repository file dos2unix..."
