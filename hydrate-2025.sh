@@ -339,10 +339,7 @@ case $choice in
         # ----- Install BloodHound.py -----
         blue_echo "Installing BloodHound.py..."
         blue_echo "This is the only ingestor as of now that is compatible with bloodhound-ce..."
-        cd /opt/;
-        sudo git clone https://github.com/dirkjanm/BloodHound.py.git
-        cd /opt/BloodHound.py/;
-        pip3 install . --break-system-packages
+        pipx install bloodhound-ce
 
         # ---- windows-privesc-check ----
         blue_echo "Installing windows-privesc-check..."
