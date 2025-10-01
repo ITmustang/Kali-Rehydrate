@@ -336,8 +336,8 @@ case $choice in
         blue_echo "pip3 installing pycryptodome/cython/ssh-audit..."
         pip3 install ssh-audit pycryptodome cython --break-system-packages;
    
-        # ----- Install BloodHound.py -----
-        blue_echo "Installing BloodHound.py..."
+        # ----- Install BloodHound Ingestor -----
+        blue_echo "Installing BloodHound-CE Ingestor..."
         blue_echo "This is the only ingestor as of now that is compatible with bloodhound-ce..."
         pipx install bloodhound-ce
 
