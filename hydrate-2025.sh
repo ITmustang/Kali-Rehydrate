@@ -1,6 +1,6 @@
 #!/bin/zsh
 #Hydrate Kali with testing preferences and pentest repos
-#Version 0.2.0
+#Version 3.0
 #Updated: 
 
 # Function to echo text in blue
