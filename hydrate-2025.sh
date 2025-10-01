@@ -262,9 +262,10 @@ case $choice in
         
         blue_echo "Installing Bloodhound-ce..."
         cd /opt/;
-        sudo mkdir bloodhound-ce;
-        cd /opt/bloodhound-ce;
-        curl -L https://ghst.ly/getbhce >> docker-compose.yml;
+        wget https://github.com/SpecterOps/bloodhound-cli/releases/latest/download/bloodhound-cli-linux-amd64.tar.gz
+        tar -xvzf bloodhound-cli-linux-amd64.tar.gz
+        rm bloodhound-cli-linux-amd64.tar.gz
+        ./bloodhound-cli install
         
         blue_echo "Updating package lists..."
         sudo apt-get update -qq
