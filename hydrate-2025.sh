@@ -406,21 +406,10 @@ case $choice in
         blue_echo "Installing ssh-audit..."
 
         # ----- install empire -------
+        # ----- docker run -it -p 1337:1337 bcsecurity/empire:latest ------
         blue_echo "Installing empire..."
-        sudo chown sca:sca -R /opt/Empire;
-        # ----Switching to sca user to install empire because empire cannot install or run as root. Enter Password For user sca which is just kali if it asks ----
-        su sca
-        cd /opt/Empire/setup;
-        bash ./checkout-latest-tag.sh;
-        cd ..
-        bash ./ps-empire install -y;
-
-        # ------- install Deathstar ---------
-        blue_echo "Installing Deathstar..."
-        cd /opt/DeathStar;
-        pip3 install -r requirements.txt --break-system-packages;
-        pipx install deathstar-empire;
-
+        docker pull bcsecurity/empire:latest
+        
         #---------------- install tailscale -----------------
         blue_echo "Uninstalling TailScale..."
         sudo tailscale down
