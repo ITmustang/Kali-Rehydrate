@@ -221,10 +221,6 @@ case $choice in
         blue_echo "Installing SecLists..."
         sudo apt-get install seclists -y -qq
 
-        blue_echo "Installing Steghide and Stegcracker..."
-        sudo apt-get install steghide -y -qq
-        sudo apt-get install stegcracker -y -qq
-
         blue_echo "Installing rlwrap..."
         sudo apt-get install rlwrap -y -qq
 
@@ -338,10 +334,8 @@ case $choice in
 
         # ----- Pip3 Install Respositories -----
         blue_echo "pip3 installing pycryptodome/cython/ssh-audit..."
-        pip3 install pycryptodome --break-system-packages;
-        pip3 install ssh-audit --break-system-packages;
-        pip3 install cython --break-system-packages;
-        
+        pip3 install ssh-audit pycryptodome cython --break-system-packages;
+   
         # ----- Install BloodHound.py -----
         blue_echo "Installing BloodHound.py..."
         blue_echo "This is the only ingestor as of now that is compatible with bloodhound-ce..."
@@ -448,10 +442,10 @@ case $choice in
         blue_echo "Installing Tenable Nessus..."
         cd /opt/ 
         curl --request GET \
-        --url 'https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.9.3-ubuntu1604_amd64.deb' \
-        --output 'Nessus-10.9.3-ubuntu1604_amd64.deb'
-        dpkg -i Nessus-10.9.3-ubuntu1604_amd64.deb
-        rm Nessus-10.9.3-ubuntu1604_amd64.deb
+        --url 'https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.9.4-ubuntu1604_amd64.deb' \
+        --output 'Nessus-10.9.4-ubuntu1604_amd64.deb'
+        dpkg -i Nessus-10.9.4-ubuntu1604_amd64.deb
+        rm Nessus-10.9.4-ubuntu1604_amd64.deb
         sudo systemctl enable nessusd
         sudo systemctl start nessusd
       
