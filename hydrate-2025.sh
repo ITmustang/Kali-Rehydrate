@@ -38,7 +38,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # ----- Kali Rehydrate Menu -----
-version_number="v0.2.0"
+version_number="v0.3.0"
 blue_echo "
                                    .^                                
                                    :PB7                               
