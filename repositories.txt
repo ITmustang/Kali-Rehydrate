@@ -15,9 +15,8 @@ https://github.com/danielbohannon/Invoke-Obfuscation
 https://github.com/hmaverickadams/autoNTDS
 https://github.com/drwetter/testssl.sh
 https://github.com/jtesta/ssh-audit
-https://github.com/BC-SECURITY/Empire --recursive
-https://github.com/byt3bl33d3r/DeathStar
 https://github.com/dirkjanm/BloodHound.py
 https://github.com/Mazars-Tech/AD_Miner.git
 https://github.com/p0dalirius/smbclient-ng.git
+
 
