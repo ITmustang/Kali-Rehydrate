@@ -409,6 +409,7 @@ case $choice in
         # ----- docker run -it -p 1337:1337 bcsecurity/empire:latest ------
         blue_echo "Installing empire..."
         blue_echo "docker run -it -p 1337:1337 bcsecurity/empire:latest"
+        blue_echo "install deathstar plugin once logged in..."
         docker pull bcsecurity/empire:latest
         
         #---------------- install tailscale -----------------
