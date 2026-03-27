@@ -249,6 +249,9 @@ case $choice in
         blue_echo "Installing misc PIP3 tools..."
         pip3 install pandas openpyxl requests beautifulsoup4 stem tor shell-gpt xlsxwriter lolcat --break-system-packages 
 
+        blue_echo "Installing misc tools..."
+        apt-get install nuclei sipvicious sipsak
+
         blue_echo "Installing npm..."
         sudo apt-get install npm -y -qq
 
