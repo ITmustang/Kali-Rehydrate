@@ -247,7 +247,7 @@ case $choice in
         sudo systemctl start ssh
 
         blue_echo "Installing misc PIP3 tools..."
-        pip3 install pandas openpyxl requests beautifulsoup4 stem tor shell-gpt xlsxwriter lolcat --break-system-packages 
+        pip3 install pandas openpyxl requests beautifulsoup4 stem tor shell-gpt xlsxwriter lolcat certipy-ad --break-system-packages 
 
         blue_echo "Installing misc tools..."
         apt-get install nuclei sipvicious sipsak
