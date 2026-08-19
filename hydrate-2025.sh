@@ -259,10 +259,8 @@ case $choice in
         pipx install 'git+https://github.com/Mazars-Tech/AD_Miner.git'
         pipx ensurepath;
 
-        blue_echo "Installing Bloodbash..."
-        curl -sL -o bloodbash \
-        https://github.com/DotNetRussell/BloodBash/releases/latest/download/bloodbash-linux-x64
-        chmod +x bloodbash
+        blue_echo "Installing BloodBash..."
+        pipx install git+https://github.com/DotNetRussell/BloodBash
         
         blue_echo "Installing Bloodhound-ce..."
         cd /opt/;
